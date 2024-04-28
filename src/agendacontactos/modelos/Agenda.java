@@ -41,7 +41,6 @@ public class Agenda {
                 System.out.println("The contact already exists.");
                 System.out.println("Press Enter to continue...");
                 scanner.nextLine();
-                contacts[numContacts++] = newContact;
             }
         } else {
             System.out.println("The agenda is full.");
