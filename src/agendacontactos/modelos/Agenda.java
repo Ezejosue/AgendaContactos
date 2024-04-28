@@ -11,18 +11,29 @@ import java.util.Scanner;
  *
  * @author Ezequiel
  */
+/**
+ * Represents an agenda for managing contacts.
+ */
 public class Agenda {
 
-    private static final int MAX_CONTACTS = 10;
-    private Contact[] contacts;
-    private int numContacts;
-    private Scanner scanner = new Scanner(System.in);
+    private static final int MAX_CONTACTS = 10; // Maximum number of contacts
+    private Contact[] contacts; // Array to store contacts
+    private int numContacts; // Number of contacts in the agenda
+    private Scanner scanner = new Scanner(System.in); // Scanner object for user input
 
+    /**
+     * Constructs an Agenda object with an empty list of contacts.
+     */
     public Agenda() {
         contacts = new Contact[MAX_CONTACTS];
         numContacts = 0;
     }
 
+    /**
+     * Adds a new contact to the agenda.
+     *
+     * @param newContact the contact to be added.
+     */
     public void addContact(Contact newContact) {
         if (numContacts < MAX_CONTACTS) {
             boolean exists = false;
@@ -49,6 +60,11 @@ public class Agenda {
         }
     }
 
+    /**
+     * Searches for a contact in the agenda by name.
+     *
+     * @param name the name of the contact to search for.
+     */
     public void searchContact(String name) {
         boolean found = false;
         for (int i = 0; i < numContacts; i++) {
@@ -66,6 +82,11 @@ public class Agenda {
         scanner.nextLine();
     }
 
+    /**
+     * Modifies a contact in the agenda by name.
+     *
+     * @param name the name of the contact to modify.
+     */
     public void modifyContact(String name) {
         boolean found = false;
 
@@ -102,6 +123,11 @@ public class Agenda {
         scanner.nextLine();
     }
 
+    /**
+     * Deletes a contact from the agenda by name.
+     *
+     * @param name the name of the contact to delete.
+     */
     public void deleteContact(String name) {
         boolean found = false;
         for (int i = 0; i < numContacts; i++) {
@@ -130,6 +156,9 @@ public class Agenda {
         scanner.nextLine();
     }
 
+    /**
+     * Displays all contacts in the agenda.
+     */
     public void showContacts() {
         if (numContacts == 0) {
             System.out.println("Empty agenda");
@@ -143,6 +172,9 @@ public class Agenda {
         scanner.nextLine();
     }
 
+    /**
+     * Clears all contacts from the agenda.
+     */
     public void clearAgenda() {
         System.out.print("Are you sure you want to clear the agenda (y/n): ");
         String clearChoice = scanner.nextLine().trim().toLowerCase();

@@ -13,6 +13,13 @@ import java.util.Scanner;
  */
 public class Menu {
 
+    /**
+     * Displays the menu for the contact agenda and prompts the user to select
+     * an option.
+     *
+     * @param scanner the Scanner object used to read user input.
+     * @return the selected option as an integer.
+     */
     public static int showMenu(Scanner scanner) {
         System.out.println("\n*** Contact Agenda ***");
         System.out.println("1. Add Contact");
@@ -25,4 +32,5 @@ public class Menu {
         System.out.print("Select an option: ");
         return scanner.nextInt();
     }
+
 }
