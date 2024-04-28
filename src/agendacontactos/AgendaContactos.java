@@ -8,8 +8,8 @@ package agendacontactos;
 import agendacontactos.modelos.Agenda;
 import agendacontactos.modelos.Contact;
 import java.util.Scanner;
-import util.ClearScreen;
-import util.Menu;
+import agendacontactos.util.ClearScreen;
+import agendacontactos.util.Menu;
 
 /**
  *
