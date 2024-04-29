@@ -11,10 +11,19 @@ import java.util.Scanner;
  *
  * @author Ezequiel
  */
+/**
+ * Validator class provides methods for input validation.
+ */
 public class Validator {
 
     private static final Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Validates the user input for menu options.
+     *
+     * @param message the message prompting the user for input
+     * @return the validated menu option
+     */
     public static int validateMenuOption(String message) {
         int option = 0;
         boolean isValid = false;
@@ -35,6 +44,12 @@ public class Validator {
         return option;
     }
 
+    /**
+     * Retrieves a non-empty string input from the user.
+     *
+     * @param message the message prompting the user for input
+     * @return the non-empty string input
+     */
     public static String getNonEmptyString(String message) {
         String input = "";
         do {
@@ -47,6 +62,12 @@ public class Validator {
         return input;
     }
 
+    /**
+     * Retrieves an integer input from the user.
+     *
+     * @param message the message prompting the user for input
+     * @return the integer input
+     */
     public static int getInt(String message) {
         int input = 0;
         boolean isValid = false;
