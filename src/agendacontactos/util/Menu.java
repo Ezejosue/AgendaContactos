@@ -6,6 +6,7 @@
 package agendacontactos.util;
 
 import java.util.Scanner;
+import agendacontactos.util.Validator;
 
 /**
  *
@@ -29,8 +30,9 @@ public class Menu {
         System.out.println("5. Show Contacts");
         System.out.println("6. Clear Agenda");
         System.out.println("7. Exit");
-        System.out.print("Select an option: ");
-        return scanner.nextInt();
+        int option = Validator.validateMenuOption("Select an option: ");
+
+        return option;
     }
 
 }

@@ -10,6 +10,7 @@ import agendacontactos.modelos.Contact;
 import java.util.Scanner;
 import agendacontactos.util.ClearScreen;
 import agendacontactos.util.Menu;
+import agendacontactos.util.Validator;
 
 /**
  *
@@ -33,38 +34,33 @@ public class AgendaContactos {
         while (!exit) {
             ClearScreen.clear(); // Clears the console screen
             int option = Menu.showMenu(scanner); // Displays the menu and gets user input
-            scanner.nextLine(); // Consumes the newline character
 
             ClearScreen.clear();
 
             switch (option) {
                 case 1:
                     // Add a new contact
-                    System.out.println("Enter the name of the contact: ");
-                    String name = scanner.nextLine();
-                    System.out.println("Enter the contact's phone number: ");
-                    String phone = scanner.nextLine();
+                    String name = Validator.getNonEmptyString("Enter the name of the contact: ");
+                    String phone = Validator.getNonEmptyString("Enter the contact's phone number: ");
                     ClearScreen.clear();
                     agenda.addContact(new Contact(name, phone));
                     break;
                 case 2:
                     // Search for a contact
-                    System.out.println("Enter the name of the contact to search for: ");
-                    String nameSearch = scanner.nextLine();
+                    String nameSearch = Validator.getNonEmptyString("Enter the name of the contact to search for: ");
                     ClearScreen.clear();
                     agenda.searchContact(nameSearch);
                     break;
                 case 3:
                     // Modify a contact
-                    System.out.println("Enter the name of the contact to be modified: ");
-                    String nameModify = scanner.nextLine();
+                    String nameModify = Validator.getNonEmptyString("Enter the name of the contact to be modified: ");
                     ClearScreen.clear();
                     agenda.modifyContact(nameModify);
                     break;
                 case 4:
                     // Delete a contact
                     System.out.println("Enter the name of the contact to delete: ");
-                    String nameDelete = scanner.nextLine();
+                    String nameDelete = Validator.getNonEmptyString("Enter the name of the contact to delete: ");
                     ClearScreen.clear();
                     agenda.deleteContact(nameDelete);
                     break;
